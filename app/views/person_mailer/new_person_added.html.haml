@@ -1,3 +1,7 @@
-Hello #{@person.first_name} #{@person.last_name}
-Please notice that #{@new_person['first_name']} #{@new_person['last_name']} has joined the application.
-Regards, People System
+%p
+  %h1
+    Hello #{@person.first_name} #{@person.last_name},
+%p
+  Please notice that #{@new_person['first_name']} #{@new_person['last_name']} has joined the application.
+%p
+  Regards, People System

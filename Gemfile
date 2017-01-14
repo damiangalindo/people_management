@@ -31,6 +31,7 @@ end
 group :development do
   gem 'better_errors', '2.1.1'
   gem 'bullet', '5.1.0'
+  gem 'letter_opener'
   gem 'rails-erd' # for erd
   gem 'rubocop', '0.40.0', require: false
   gem 'spring', '1.7.1'

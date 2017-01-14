@@ -147,6 +147,8 @@ GEM
     key_struct (0.4.2)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -355,6 +357,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
+  letter_opener
   minitest-rails (~> 2.0)
   minitest-rails-capybara
   mocha
