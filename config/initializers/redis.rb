@@ -1,2 +1,2 @@
-uri = ENV["REDISTOGO_URL"] || "redis://localhost:6379/"
-REDIS = Redis.new(:url => uri)
+REDIS = Redis.connect(:url => ENV['REDISTOGO_URL'])
+Resque.redis = REDIS
