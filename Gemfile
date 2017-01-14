@@ -21,6 +21,8 @@ gem 'resque'#, '4.1.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'validates_email_format_of'#, '~> 1.6'
 
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.7'
   gem 'faker', '~> 1.6', '>= 1.6.3'
