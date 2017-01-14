@@ -1,7 +1,9 @@
 %tr
   %td
-    =link_to "#{person.first_name} #{person.last_name}", person_path(person)
+    =link_to person.full_name, person_path(person)
   %td
     #{ person.age }
   %td
-    = link_to 'delete', person_path(person), method: :delete
+    %span.label.label-danger.delete_person_button.btn{ 'data-full_name' => person.full_name, 'data-url' => person_path(person) } delete
+
+= render partial: 'shared/delete_person_confirmation_modal'

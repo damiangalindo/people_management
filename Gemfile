@@ -2,8 +2,10 @@ source 'https://rubygems.org'
 
 gem 'annotate'#, '2.7.1'
 gem 'auto_strip_attributes' #, '2.0.6'
+gem 'bootstrap_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'coffee-rails' #, '~> 4.1.0'
+gem 'draper'
 gem 'decent_exposure', '3.0.0'
 gem 'haml-rails', '~> 0.9'
 gem 'jbuilder', '~> 2.0'
@@ -36,14 +38,13 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.7.1'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem 'fakeredis', '~> 0.6.0'
   gem 'launchy'
   gem 'minitest-rails-capybara'
   gem 'minitest-rails', '~> 2.0'
   gem 'mocha'
-  gem 'poltergeist', '~> 1.10.0'
+  gem 'capybara-webkit'
   gem 'simplecov', '~> 0.11.2'
   gem 'shoulda', '~> 3.5'
   gem 'shoulda-context'

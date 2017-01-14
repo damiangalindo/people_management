@@ -8,7 +8,7 @@
 #  email      :string(254)      not null
 #  job        :string(75)
 #  bio        :text(65535)
-#  gender     :integer
+#  gender     :string(255)      not null
 #  birthdate  :date             not null
 #  picture    :string(255)
 #  created_at :datetime         not null
@@ -16,17 +16,21 @@
 #
 
 class Person < ActiveRecord::Base
-  schema_validations except: :email
+  # constants
+  GENDER = %w( male female ).freeze
 
+  # scopes
+  default_scope { order('first_name ASC, last_name ASC') }
+
+  # validations
+  schema_validations except: [:email, :gender]
   validates :email, uniqueness: { case_sensitive: false }, presence: true, length: { maximum: 254 }, email_format: true
+  validates :gender, inclusion: { in: GENDER }, presence: true
+  validate :birthdate_not_in_the_future
 
+  # callbacks
   after_create :send_mail_new_person
-
   after_destroy :send_mail_deleted_person
-
-  def age
-    ((Time.now - Time.parse(birthdate.to_s)) / 1.year).round
-  end
 
   private
 
@@ -37,5 +41,11 @@ class Person < ActiveRecord::Base
   def send_mail_deleted_person
     person = { first_name: self.first_name, last_name: self.last_name }
     Resque.enqueue(EmailSenderJob, person, 'person_deleted')
+  end
+
+  def birthdate_not_in_the_future
+    if birthdate && birthdate > Date.today
+      errors.add(:birthdate, 'you can\'t pick a date in the future as your birth date')
+    end
   end
 end

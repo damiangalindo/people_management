@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114014818) do
+ActiveRecord::Schema.define(version: 20170114193745) do
 
   create_table "people", force: :cascade do |t|
     t.string   "first_name", :limit=>75, :null=>false, :index=>{:name=>"index_people_on_first_name", :using=>:btree}
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170114014818) do
     t.string   "email",      :limit=>254, :null=>false
     t.string   "job",        :limit=>75, :index=>{:name=>"index_people_on_job", :using=>:btree}
     t.text     "bio",        :limit=>65535
-    t.integer  "gender",     :limit=>4, :index=>{:name=>"index_people_on_gender", :using=>:btree}
+    t.string   "gender",     :limit=>255, :null=>false, :index=>{:name=>"index_people_on_gender", :using=>:btree}
     t.date     "birthdate",  :null=>false, :index=>{:name=>"index_people_on_birthdate", :using=>:btree}
     t.string   "picture",    :limit=>255
     t.datetime "created_at", :null=>false

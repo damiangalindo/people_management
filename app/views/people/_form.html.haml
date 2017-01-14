@@ -1,11 +1,10 @@
-= form_for person do |f|
-  = person.errors.inspect
-
-  = f.text_field :first_name, placeholder: 'first_name'
-  = f.text_field :last_name, placeholder: 'last_name'
-  = f.email_field :email, placeholder: 'email'
-  = f.text_field :picture, placeholder: 'picture'
-  = f.date_field :birthdate, placeholder: 'birthdate'
-
-  = f.submit
-  = link_to 'cancel', people_path
+= bootstrap_form_for person, class: 'form-horizontal' do |f|
+  = f.date_field :birthdate, placeholder: 'birthdate', class: 'form-control'
+  = f.text_field :first_name, placeholder: 'first_name', class: 'form-control'
+  = f.text_field :last_name, placeholder: 'last_name', class: 'form-control'
+  = f.email_field :email, placeholder: 'email', class: 'form-control'
+  = f.select :gender, Person::GENDER, { include_blank: 'Pick a Gender' }
+  = f.text_field :picture, placeholder: 'picture', class: 'form-control'
+  = f.text_area :bio, placeholder: 'bio', class: 'form-control'
+  = link_to 'cancel', people_path, class: 'btn btn-default'
+  = button_tag 'Send', class: 'btn btn-primary'

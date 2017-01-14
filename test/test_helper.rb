@@ -10,9 +10,28 @@ require 'mocha/mini_test'
 
 # Uncomment for awesome colorful output
 # require "minitest/pride"
+require "minitest/rails/capybara"
+Capybara.javascript_driver = :webkit
 
 class ActiveSupport::TestCase
   fixtures :all
 
   require 'minitest/mock'
+end
+
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+  include Capybara::Assertions
+end
+
+DatabaseCleaner.strategy = :transaction
+
+class Minitest::Spec
+  before :each do
+    DatabaseCleaner.start
+  end
+
+  after :each do
+    DatabaseCleaner.clean
+  end
 end

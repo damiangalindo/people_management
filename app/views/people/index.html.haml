@@ -4,7 +4,7 @@
 %h2
   =link_to 'Create a person', new_person_path
 
-%table
+%table.table
   %thead
     %th First Name & Last Name
     %th Age
@@ -12,4 +12,5 @@
   %tbody
     = render people
 
-= paginate people
+.text-center
+  = paginate people

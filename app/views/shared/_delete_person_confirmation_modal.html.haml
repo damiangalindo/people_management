@@ -1,0 +1,13 @@
+#confirmation_dialog.modal.fade{ 'aria-labelledby' => 'modal_label', role: 'dialog', style: 'display: none;', :tabindex => '-1'}
+  .modal-dialog{:role => 'document'}
+    .modal-content
+      .modal-header
+        %button.close{'aria-label' => 'Close', 'data-dismiss' => 'modal', :type => 'button'}
+          %span{'aria-hidden' => 'true'} ×
+        %h4#modal_label.modal-title
+          Are you sure you want to delete
+          %span.text-danger.person_full_name
+          ?
+      .modal-footer
+        %button.btn.btn-default{'data-dismiss' => 'modal', type: 'button'} No
+        = link_to 'Yes', '', method: :delete, class: 'btn btn-danger delete_person'

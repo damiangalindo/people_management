@@ -1,4 +1,21 @@
-= person.first_name
-= link_to 'edit', edit_person_path(person)
-= link_to 'delete', person_path(person), method: :delete
-= link_to 'cancel', people_path
+.col-lg-3.col-md-3
+  = image_tag person.get_picture, class: 'img-thumbnail'
+.col-lg-9.col-md-9
+  %h1= person.full_name
+  %h3= person.email
+  %h4
+    = person.gender_title
+  %h4
+    Birth Date
+  %h5
+    %p= person.birthdate
+  %h4
+    Job
+  %h5
+    %p= person.job
+  %p= person.bio
+  = link_to 'edit', edit_person_path(person), class: 'btn btn-primary'
+  %button.delete_person_button.btn.btn-danger{ 'data-full_name' => person.full_name, 'data-url' => person_path(person) } delete
+  = link_to 'cancel', people_path, class: 'btn btn-default'
+
+  = render partial: 'shared/delete_person_confirmation_modal'
