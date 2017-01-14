@@ -1,0 +1,8 @@
+:queues:
+  - [high,              4]
+  - [default,           1]
+
+:verbose: true
+
+production:
+  :concurrency: 15

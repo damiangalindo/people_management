@@ -1,0 +1,18 @@
+# Ignore bundler config.
+/.bundle
+
+dump.rdb
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+
+
+/config/database.yml
+
+# Ignore coverage files
+coverage
+
+.DS_Store
+

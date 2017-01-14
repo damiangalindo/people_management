@@ -1,0 +1,19 @@
+attributes:
+  - content
+  - foreign_key
+  - inheritance
+disconnected: true
+filename: doc/assessments-erd
+filetype: svg
+indirect: true
+inheritance: true
+markup: true
+notation: simple
+orientation: vertical
+polymorphism: true
+sort: true
+warn: true
+title: Assessments ERD
+exclude: null
+only: null
+prepend_primary: false
