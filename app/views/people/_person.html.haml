@@ -1,0 +1,7 @@
+%tr
+  %td
+    =link_to "#{person.first_name} #{person.last_name}", person_path(person)
+  %td
+    #{ person.age }
+  %td
+    = link_to 'delete', person_path(person), method: :delete

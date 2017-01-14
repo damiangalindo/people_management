@@ -1,0 +1,15 @@
+%h1
+  People
+
+%h2
+  =link_to 'Create a person', new_person_path
+
+%table
+  %thead
+    %th First Name & Last Name
+    %th Age
+    %th Delete Button
+  %tbody
+    = render people
+
+= paginate people
