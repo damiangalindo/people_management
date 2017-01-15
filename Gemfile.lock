@@ -80,6 +80,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    colored (1.2)
     concurrent-ruby (1.0.4)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -315,6 +316,9 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.5)
+    tomdoc (0.2.5)
+      colored
+      ruby_parser (>= 2.0.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.4)
@@ -382,6 +386,7 @@ DEPENDENCIES
   shoulda-matchers (~> 2.0)
   simplecov (~> 0.11.2)
   spring (= 1.7.1)
+  tomdoc (= 0.2.5)
   uglifier (>= 1.3.0)
   validates_email_format_of (= 1.6.3)
   web-console (~> 2.0)

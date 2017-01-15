@@ -17,6 +17,7 @@ gem 'rails', '4.2.5.2'
 gem 'sass-rails', '5.0.6'
 gem 'schema_validations', '2.2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'tomdoc', '0.2.5'
 gem 'resque'
 gem 'uglifier', '>= 1.3.0'
 gem 'validates_email_format_of', '1.6.3'

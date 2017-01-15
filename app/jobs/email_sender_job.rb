@@ -1,3 +1,9 @@
+# Public: Job to send emails in background
+# Examples
+#
+#   EmailSenderJob.Resque.enqueue(EmailSenderJob, person, 'person_deleted')
+#
+
 class EmailSenderJob
   @queue = :emails_queue
 
@@ -10,6 +16,7 @@ class EmailSenderJob
     end
   end
 
+  # Public: Send an email to everyone in the app except the recently created one
   def self.send_new_person_email(not_included_person)
     people = Person.where.not(id: not_included_person['id'])
     people.each do |person|
@@ -17,6 +24,7 @@ class EmailSenderJob
     end
   end
 
+  # Public: Send an email to everyone in the app except the recently deleted one
   def self.send_deleted_person_email(deleted_person)
     people = Person.all
     people.each do |person|

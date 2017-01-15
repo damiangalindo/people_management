@@ -1,3 +1,12 @@
+# Public: Send emails
+#
+# Example:
+#   PersonMailer.new_person_added(person, new_person).deliver_now
+#   # => send an email to the person about the person recently added
+#
+#   PersonMailer.person_deleted(person, deleted_person).deliver_now
+#   # => send an email to the person about the person recently deleted
+
 class PersonMailer < ApplicationMailer
   def new_person_added(person, new_person)
     @person = person.decorate

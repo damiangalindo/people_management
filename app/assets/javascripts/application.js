@@ -25,7 +25,6 @@ $(document).on('ready', function(){
     $that = $(this);
 
     $('#confirmation_dialog').modal('show');
-    console.log($that.data('url'))
     $('.person_full_name').text($that.data('full_name'))
     $('.delete_person').attr('href', $that.data('url'))
   })

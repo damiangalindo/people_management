@@ -13,7 +13,7 @@ You have to be sure that you have Redis and MySQL installed, along with the ruby
 
 ## Delivered
 
-
+Sunday 15 Jan 2017 08:00PM UTC-05:20
 
 ## Database Configuration File
 
