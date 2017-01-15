@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PersonIntegrationTest < Capybara::Rails::TestCase
-  feature 'Can Access Home' do
+  feature 'Accessing People views' do
     scenario 'has person full_name' do
       person = FactoryGirl.create(:person).decorate
       visit root_path

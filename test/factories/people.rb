@@ -17,13 +17,13 @@
 
 FactoryGirl.define do
   factory :person do
-    first_name          Faker::Name.first_name
-    last_name           Faker::Name.last_name
-    sequence(:email) { |n| "email#{n}@example.com" }
-    job                 Faker::Name.title
-    bio                 Faker::Lorem.paragraph
-    gender              'male'
-    birthdate           Date.today - 20.years
-    picture             Faker::Internet.url
+    sequence(:first_name)   { |n| "#{Faker::Name.unique.first_name} #{n}" }
+    sequence(:last_name)    { |n| "#{Faker::Name.unique.last_name} #{n}" }
+    sequence(:email)        { |n| "email#{n}@example.com" }
+    job                     Faker::Name.unique.title
+    bio                     Faker::Lorem.unique.paragraph
+    gender                  'male'
+    birthdate               Date.today - 20.years
+    picture                 Faker::Internet.url
   end
 end

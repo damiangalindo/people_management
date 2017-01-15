@@ -37,7 +37,7 @@ class PersonTest < ActiveSupport::TestCase
     should_not allow_value(Date.today + 1.day).for(:birthdate)
     should_not allow_value('test').for(:email)
     should allow_value('test@example.com').for(:email)
-    should allow_value('male').for(:gender)
+    should validate_inclusion_of(:gender).in_array(Person::GENDER)
     should_not allow_value('other').for(:gender)
   end
 
