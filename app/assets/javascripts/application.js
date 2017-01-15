@@ -16,7 +16,7 @@
 //= require bootstrap-sprockets
 
 $(document).on('ready', function(){
-  $('input.form-control').on('keypress change', function(){
+  $('input.form-control, select.form-control').on('keypress change', function(){
     $(this).parents('div.form-group.has-error').removeClass('has-error');
     $(this).siblings('span.help-block').html('')
   })
