@@ -11,7 +11,7 @@ require 'mocha/mini_test'
 # require "minitest/rails/capybara"
 
 # Uncomment for awesome colorful output
-# require "minitest/pride"
+require "minitest/pride"
 require "minitest/rails/capybara"
 Capybara.javascript_driver = :webkit
 
